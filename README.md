@@ -31,6 +31,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
+Part 1: Preparing the AD Infrastructure in Azure
+Setup Domain Controller in Azure
+Create a Resource Group:
+Navigate to the Azure Portal and create a new Resource Group for the lab environment.
+
 <p>
 <img src="https://i.imgur.com/viEFhpV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
