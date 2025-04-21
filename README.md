@@ -32,28 +32,63 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 Part 1: Preparing the AD Infrastructure in Azure
-Setup Domain Controller in Azure
-Create a Resource Group:
-Navigate to the Azure Portal and create a new Resource Group for the lab environment.
+  - Setup Domain Controller in Azure
+  - Create a Resource Group:
+- Navigate to the Azure Portal and create a new Resource Group for the lab environment.
 
 <p>
-<img src="https://i.imgur.com/viEFhpV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/nYzhLx4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/riZJluD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
+- Create a Virtual Network and Subnet:
+Set up a Virtual Network with a subnet to host your VMs.
+</p>
+<img src="https://i.imgur.com/zcgmgc4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/RQGpXUB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+- Create the Domain Controller VM (Windows Server 2022):
+Name the VM: DC-1.
+Ensure that the VM is on the Virtual Network created previously.
+</p>
+</p>
+<img src="https://i.imgur.com/USDmxyz.png"height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/RdNgxHC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/MMJKIiS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+</p>
+- Set Static Private IP for DC-1: - After the VM is created, navigate to its Network Interface Card (NIC) settings and set the private IP to static.
+
+  - Navigate to the Virtual Machines window and select the DC-1 VM
 <p>
-Setting up my resources in Azure. 
+<img src="https://i.imgur.com/1hAHvkk.png " height="80%" width="80%" alt="Disk Sanitization Steps"/> 
 </p>
 <br />
-
+- Set the Allocation to Static underneath the Private IP Address Settings
 <p>
-<img src="https://i.imgur.com/uzo98kd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/tzfsVaw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+- Disable Windows Firewall:
+
+  - Log in to DC-1 and disable the Windows Firewall for testing connectivity
+
+<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-Ensuring Connetivity.
+- Setup Client-1 in Azure
+  - Create the Client VM (Windows 10 22H2):
+  - Name the VM: Client-1.
 </p>
 <br />
-
+<img src="https://i.imgur.com/mCc5GLm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-<img src="https://i.imgur.com/EB3oyzW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/XMOtCSy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Selecting Server Roles for Active Directory.
