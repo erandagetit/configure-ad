@@ -91,16 +91,76 @@ Ensure that the VM is on the Virtual Network created previously.
 <img src="https://i.imgur.com/XMOtCSy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Selecting Server Roles for Active Directory.
+- Attach Client-1 to the Same Region and Virtual Network:
+  - Ensure it is in the same Virtual Network and subnet as DC-1.
 </p>
 <br />
-<img src="https://i.imgur.com/wFUbjNx.png"height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Installing Active Directory
+<img src="https://i.imgur.com/EAmWGLP.png"height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+- Set DNS Settings:
+  - Update Client-1's DNS settings to point to DC-1's private IP address. (navigate to the vm's network interface card)
+</p>
+- You can also change the DNS settings from within the client- computer
+</p>
+</p>
+<img src="https://i.imgur.com/ZuUAskV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<img src="https://i.imgur.com/VEwjXCu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<img src="https://i.imgur.com/7JH5gyD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
 
-<img src="https://i.imgur.com/TecqRZg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Test Connectivity:
 
-Created a Administrator
+  - Restart Client-1 from the Azure Portal.
+  - Log into Client-1 and use the ping command to test connectivity with DC-1.
+  - Verify DNS Settings:
 
-<img src="https://i.imgur.com/bgyYtXP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Run ipconfig /all in PowerShell on Client-1 to ensure the DNS points to DC-1.
+</p>
+</p>
+<img src="https://i.imgur.com/ST5jGPJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Setup User Account in Active Directory
+Part 2: Deploying Active Directory
+Install Active Directory
+Log in to DC-1.
+Install Active Directory Domain Services (AD DS).
+Promote DC-1 as a Domain Controller and set up a new forest (e.g., mydomain.com).
+Restart DC-1 and log in as mydomain.com\labuser.
+</p>
+Open Server Manager then add roles and features
+
+<img src="<img src="https://i.imgur.com/ST5jGPJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+
+https://i.imgur.com/kiaiVcB.png
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
