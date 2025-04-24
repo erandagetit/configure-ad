@@ -184,17 +184,18 @@ Log into DC-1 as Jane the Admin
 - We will use DC-1 in a bit image
 <img src="https://i.imgur.com/cvjxZdm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Log into client-1 as labuser
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Log into client-1 as labuser
+<img src="https://i.imgur.com/45A9iS4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Navigate to the system window by right clicking the windows button image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Navigate to the system window by right clicking the windows button image
+<img src="https://i.imgur.com/wUBpa2s.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Join Client-1 to the domain by using the 'rename this pc' tool image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Join Client-1 to the domain by using the 'rename this pc' tool image
+<img src="https://i.imgur.com/MFWS2PF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Verify that Client-1 has joined the domain image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Verify that Client-1 has joined the domain image
+<img src="https://i.imgur.com/1rh5a9H.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Create a new folder named '_CLIENTS' and drag/drop the Client-1 computer into it image
 
 Part 3: Creating Users with PowerShell
