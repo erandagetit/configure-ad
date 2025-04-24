@@ -129,14 +129,13 @@ Promote DC-1 as a Domain Controller and set up a new forest (e.g., mydomain.com)
 Restart DC-1 and log in as mydomain.com\labuser.
 </p>
 Open Server Manager then add roles and features
-
 <img src="https://i.imgur.com/xun83MA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Add the features from the Active Directory Domain Services 
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Open the noticiation window and select "promote this server to a domain controller"
+- Open the noticiation window and select "promote this server to a domain controller"
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Add mydomain.com as a new forest image
+- Add mydomain.com as a new forest image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 Deselect "Create DNS delegation image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
