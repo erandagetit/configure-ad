@@ -133,32 +133,40 @@ Open Server Manager then add roles and features
 
 Add the features from the Active Directory Domain Services 
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 - Open the noticiation window and select "promote this server to a domain controller"
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/liXLchA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 - Add mydomain.com as a new forest image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/pVxzKOv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Deselect "Create DNS delegation image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/1P69f3o.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Finish the setup wizard and install image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/tpldaxh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 The DC-1 will automatically restart
 
-DC-1 is a domain now, in order to complete the next steps, we will have to login using the proper domain context (mydomain.com\labuser will be our username - same passwoord) image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Create a Domain Admin User
-Open Active Directory Users and Computers (ADUC).
-Create an Organizational Unit (OU) named _EMPLOYEES.
-Create another OU named _ADMINS.
-Add a new user:
-Name: Jane Doe
-Username: jane_admin
-Password: Cyberlab123!
-Add jane_admin to the Domain Admins security group.
-Log out and log back in as mydomain.com\jane_admin.
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+DC-1 is a domain now, in order to complete the next steps, we will have to login using the proper domain 
+context (mydomain.com\labuser will be our username - same passwoord) 
+<img src="https://i.imgur.com/iTc0ZRq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create a Domain Admin User
+1. Open Active Directory Users and Computers (ADUC).
+2. Create an Organizational Unit (OU) named _EMPLOYEES.
+3. Create another OU named _ADMINS.
+4. Add a new user:
+  - Name: Jane Doe
+  - Username: jane_admin
+  - Password: Cyberlab123!
+5. Add jane_admin to the Domain Admins security group.
+
+6. Log out and log back in as mydomain.com\jane_admin.
+<img src="https://i.imgur.com/Ufl6m7K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dxTLbuN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/ObxaJfR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
@@ -180,11 +188,14 @@ Log into client-1 as labuser
 
 Navigate to the system window by right clicking the windows button image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Join Client-1 to the domain by using the 'rename this pc' tool image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Verify that Client-1 has joined the domain image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 Create a new folder named '_CLIENTS' and drag/drop the Client-1 computer into it image
+
 Part 3: Creating Users with PowerShell
 Setup Remote Desktop for Domain Users
 Log into Client-1 as mydomain\jane_admin.
