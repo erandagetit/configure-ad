@@ -130,10 +130,149 @@ Restart DC-1 and log in as mydomain.com\labuser.
 </p>
 Open Server Manager then add roles and features
 
-<img src="<img src="https://i.imgur.com/ST5jGPJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/xun83MA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
+Add the features from the Active Directory Domain Services 
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Open the noticiation window and select "promote this server to a domain controller"
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Add mydomain.com as a new forest image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Deselect "Create DNS delegation image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Finish the setup wizard and install image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+The DC-1 will automatically restart
 
-https://i.imgur.com/kiaiVcB.png
+DC-1 is a domain now, in order to complete the next steps, we will have to login using the proper domain context (mydomain.com\labuser will be our username - same passwoord) image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create a Domain Admin User
+Open Active Directory Users and Computers (ADUC).
+Create an Organizational Unit (OU) named _EMPLOYEES.
+Create another OU named _ADMINS.
+Add a new user:
+Name: Jane Doe
+Username: jane_admin
+Password: Cyberlab123!
+Add jane_admin to the Domain Admins security group.
+Log out and log back in as mydomain.com\jane_admin.
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Join Client-1 to the Domain
+Log in as the local admin and join Client-1 to the domain.
+Create a new OU titled '_CLIENTS' & add Client-1 in ADUC to _CLIENTS.
+Log into DC-1 as Jane the Admin
+
+We will use DC-1 in a bit image
+Log into client-1 as labuser
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Navigate to the system window by right clicking the windows button image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Join Client-1 to the domain by using the 'rename this pc' tool image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Verify that Client-1 has joined the domain image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create a new folder named '_CLIENTS' and drag/drop the Client-1 computer into it image
+Part 3: Creating Users with PowerShell
+Setup Remote Desktop for Domain Users
+Log into Client-1 as mydomain\jane_admin.
+Open System Properties and enable Remote Desktop.
+Allow "domain users" access to Remote Desktop.
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+
+Create Users with PowerShell
+Log in to DC-1 as jane_admin.
+Open PowerShell ISE as an administrator.
+Create multiple new users using a script (script link: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1).
+Verify users appear in the _EMPLOYEES OU in ADUC.
+Attempt to log into Client-1 with one of the created accounts.
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+
+Create a new file image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Copy/Paste scripts & run it image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Verify users image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Log into Client 1 using one of the created accounts image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Part 4: Group Policy and Managing Accounts
+Account Lockout Configuration
+Log in to DC-1.
+Open Group Policy Management.
+Edit the Default Domain Policy:
+Set account lockout threshold to 5 invalid attempts.
+Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.
+Unlock the account in ADUC and reset the password.
+Type gpmc.msc into the start window image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Right click and edit the default domain policy image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Navigate to the account lockout policy image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Adjust the lockout policy image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+You can either wait for the policy to auto update (~90 minutes) or log into Client 1 as Jane and force the policy update image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Attempt to login with the incorrect password image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Back on DC-1 Open 'Active Directory Users and Computers' and search for the locked out user image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Find the user account and unlock it image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+You can also reset the password + unlock the account by right clicking on the user name image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Verify that the account has been unlocked by logging into Client-1 using the correct password image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Enable and Disable Accounts
+Disable a user account in ADUC.
+Attempt to log in with the disabled account and observe the error message.
+Re-enable the account and log in successfully.
+Right click and disable the account image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Attempt to login image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Re-enable the account from DC-1 image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+You should be able to log into Client-1 using the re-enabled account image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Observing Logs
+Review authentication and account-related logs in Event Viewer:
+Log on DC-1 for domain-level events (shown below).
+Log on Client-1 for local events.
+Open eventvwr.msc using the start menu in DC-1 image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Navigate to the Security window and find the activity for the test account image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Open Event Viewer using Client-1 and view the audit failures image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+If you are using a non-admin account, you won't be able to see the security events image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+You can either log off Client 1 and login using an admin account or run the Event Viewer as an admin and enter admin credentials image
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+Completion
+Congratulations! You have successfully deployed and configured an on-premises Active Directory environment in Azure.
 
 
 </p>
