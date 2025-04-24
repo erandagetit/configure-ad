@@ -243,43 +243,46 @@ Account Lockout Configuration
 4. Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.
 5. Unlock the account in ADUC and reset the password.
 
-Type gpmc.msc into the start window image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Type gpmc.msc into the start window image
+<img src="https://i.imgur.com/Kd7xFlk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Right click and edit the default domain policy image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Right click and edit the default domain policy image
+<img src="https://i.imgur.com/n2YsdBO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Navigate to the account lockout policy image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Navigate to the account lockout policy image
+<img src="https://i.imgur.com/reGEizs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Adjust the lockout policy image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Adjust the lockout policy image
+<img src="https://i.imgur.com/FLZQp4M.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-You can either wait for the policy to auto update (~90 minutes) or log into Client 1 as Jane and force the policy update image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- You can either wait for the policy to auto update (~90 minutes) or log into Client 1 as Jane and force the policy update image
+<img src="https://i.imgur.com/Sy1TJXm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Attempt to login with the incorrect password image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Attempt to login with the incorrect password image
+<img src="https://i.imgur.com/fWfe6vB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Back on DC-1 Open 'Active Directory Users and Computers' and search for the locked out user image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Back on DC-1 Open 'Active Directory Users and Computers' and search for the locked out user image
+<img src="https://i.imgur.com/Js4wJ5y.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Find the user account and unlock it image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Find the user account and unlock it image
+<img src="https://i.imgur.com/xZRdJwf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-You can also reset the password + unlock the account by right clicking on the user name image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- You can also reset the password + unlock the account by right clicking on the user name image
+<img src="https://i.imgur.com/KgZNdzR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Verify that the account has been unlocked by logging into Client-1 using the correct password image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Verify that the account has been unlocked by logging into Client-1 using the correct password image
+<img src="https://i.imgur.com/ZVBbaL0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Enable and Disable Accounts
-Disable a user account in ADUC.
-Attempt to log in with the disabled account and observe the error message.
-Re-enable the account and log in successfully.
+
+1. Disable a user account in ADUC.
+2. Attempt to log in with the disabled account and observe the error message.
+3. Re-enable the account and log in successfully.
+
 Right click and disable the account image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/XRQcWPJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+<img src="https://i.imgur.com/BuNCDuQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Attempt to login image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 Re-enable the account from DC-1 image
