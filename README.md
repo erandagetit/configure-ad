@@ -197,62 +197,82 @@ Log into DC-1 as Jane the Admin
 <img src="https://i.imgur.com/1rh5a9H.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Create a new folder named '_CLIENTS' and drag/drop the Client-1 computer into it image
+<img src="https://i.imgur.com/Ee58OQ8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Part 3: Creating Users with PowerShell
-Setup Remote Desktop for Domain Users
-Log into Client-1 as mydomain\jane_admin.
-Open System Properties and enable Remote Desktop.
-Allow "domain users" access to Remote Desktop.
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
 
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+Setup Remote Desktop for Domain Users
+1. Log into Client-1 as mydomain\jane_admin.
+2. Open System Properties and enable Remote Desktop.
+3. Allow "domain users" access to Remote Desktop.
+<img src="https://i.imgur.com/YD5Ht4H.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+
+<img src="https://i.imgur.com/rQcg5Du.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
 
 Create Users with PowerShell
-Log in to DC-1 as jane_admin.
-Open PowerShell ISE as an administrator.
-Create multiple new users using a script (script link: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1).
-Verify users appear in the _EMPLOYEES OU in ADUC.
-Attempt to log into Client-1 with one of the created accounts.
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+1. Log in to DC-1 as jane_admin.
+2. Open PowerShell ISE as an administrator.
+3.Create multiple new users using a script (script link:
+</p>
+https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1).
+4. Verify users appear in the _EMPLOYEES OU in ADUC.
+5. Attempt to log into Client-1 with one of the created accounts.
+<img src="https://i.imgur.com/F1O9ugb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
 
-Create a new file image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Copy/Paste scripts & run it image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Verify users image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Log into Client 1 using one of the created accounts image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Create a new file image
+<img src="https://i.imgur.com/e3azm8k.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+- Copy/Paste scripts & run it image
+<img src="https://i.imgur.com/YkjIK8f.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+- Verify users image
+<img src="https://i.imgur.com/WwX4hkJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/V1Wqiju.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+- Log into Client 1 using one of the created accounts image
+<img src="https://i.imgur.com/P8PhZNY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Part 4: Group Policy and Managing Accounts
+
 Account Lockout Configuration
-Log in to DC-1.
-Open Group Policy Management.
-Edit the Default Domain Policy:
-Set account lockout threshold to 5 invalid attempts.
-Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.
-Unlock the account in ADUC and reset the password.
+
+1. Log in to DC-1.
+2. Open Group Policy Management.
+3. Edit the Default Domain Policy:
+  - Set account lockout threshold to 5 invalid attempts.
+4. Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.
+5. Unlock the account in ADUC and reset the password.
+
 Type gpmc.msc into the start window image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Right click and edit the default domain policy image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Navigate to the account lockout policy image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Adjust the lockout policy image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 You can either wait for the policy to auto update (~90 minutes) or log into Client 1 as Jane and force the policy update image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Attempt to login with the incorrect password image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Back on DC-1 Open 'Active Directory Users and Computers' and search for the locked out user image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Find the user account and unlock it image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 You can also reset the password + unlock the account by right clicking on the user name image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Verify that the account has been unlocked by logging into Client-1 using the correct password image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Enable and Disable Accounts
 Disable a user account in ADUC.
 Attempt to log in with the disabled account and observe the error message.
