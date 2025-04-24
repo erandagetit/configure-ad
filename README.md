@@ -283,27 +283,36 @@ Right click and disable the account image
 <img src="https://i.imgur.com/XRQcWPJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
 <img src="https://i.imgur.com/BuNCDuQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Attempt to login image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Re-enable the account from DC-1 image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Attempt to login image
+<img src="https://i.imgur.com/HwY8ncw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+- Re-enable the account from DC-1 image
+<img src="https://i.imgur.com/88U4aDm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 You should be able to log into Client-1 using the re-enabled account image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/VRoM7Fl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Observing Logs
+
 Review authentication and account-related logs in Event Viewer:
-Log on DC-1 for domain-level events (shown below).
-Log on Client-1 for local events.
-Open eventvwr.msc using the start menu in DC-1 image
+  - Log on DC-1 for domain-level events (shown below).
+  - Log on Client-1 for local events.
+
+- Open eventvwr.msc using the start menu in DC-1 image
+<img src="https://i.imgur.com/Uxdr6fg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+- Navigate to the Security window and find the activity for the test account image
+<img src="https://i.imgur.com/t5fT78J.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/32pPnHW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+
+
+- Open Event Viewer using Client-1 and view the audit failures image
+<img src="https://i.imgur.com/79klbfr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+- If you are using a non-admin account, you won't be able to see the security events image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Navigate to the Security window and find the activity for the test account image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Open Event Viewer using Client-1 and view the audit failures image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-If you are using a non-admin account, you won't be able to see the security events image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-You can either log off Client 1 and login using an admin account or run the Event Viewer as an admin and enter admin credentials image
+
+- You can either log off Client 1 and login using an admin account or run the Event Viewer as an admin and enter admin credentials image
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
 Completion
