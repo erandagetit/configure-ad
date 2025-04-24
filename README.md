@@ -168,22 +168,23 @@ Create a Domain Admin User
 
 <img src="https://i.imgur.com/ObxaJfR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/9vWe4JS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/jRfsfUq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/UkDRDBF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/cvjxZdm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Join Client-1 to the Domain
-Log in as the local admin and join Client-1 to the domain.
-Create a new OU titled '_CLIENTS' & add Client-1 in ADUC to _CLIENTS.
+1. Log in as the local admin and join Client-1 to the domain.
+2. Create a new OU titled '_CLIENTS' & add Client-1 in ADUC to _CLIENTS.
 Log into DC-1 as Jane the Admin
 
-We will use DC-1 in a bit image
-Log into client-1 as labuser
+- We will use DC-1 in a bit image
+<img src="https://i.imgur.com/cvjxZdm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
+Log into client-1 as labuser
 <img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Navigate to the system window by right clicking the windows button image
