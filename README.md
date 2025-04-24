@@ -310,11 +310,12 @@ Review authentication and account-related logs in Event Viewer:
 <img src="https://i.imgur.com/79klbfr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 - If you are using a non-admin account, you won't be able to see the security events image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ZzpFkRR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 - You can either log off Client 1 and login using an admin account or run the Event Viewer as an admin and enter admin credentials image
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/Jh1ZOPu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+<img src="https://i.imgur.com/MfaHMWI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/OAIi8lu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>image
+
 Completion
 Congratulations! You have successfully deployed and configured an on-premises Active Directory environment in Azure.
 
